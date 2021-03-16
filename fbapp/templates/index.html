@@ -1,127 +1,136 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Time Ranges</title>
-  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-
-  <!-- Load Leaflet from CDN -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin=""/>
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-    crossorigin=""></script>
-
-  <!-- Load Esri Leaflet from CDN -->
-  <script src="https://unpkg.com/esri-leaflet@2.5.3/dist/esri-leaflet.js"
-    integrity="sha512-K0Vddb4QdnVOAuPJBHkgrua+/A9Moyv8AQEWi0xndQ+fqbRfAFd47z4A9u1AW/spLO0gEaiE1z98PK1gl5mC5Q=="
-    crossorigin=""></script>
-
-    <link rel="stylesheet" href="static/css/style.css">
-
+  <title>Skills Of Life</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
-
-<div class="container">
-  <button type="button" class="btn btn-light">Basic Annotation Tool</button>
-    <div class="row">
-        <div class="col-sm-6" style="position: relative;" >
-          <div id="map">
-            <div class="leaflet-control leaflet-bar leaflet-control" style="margin-left: 2%;margin-top: 17%; background-color: white; ">
-              <a href="#" title="Zoom out" role="button" ><img width="20px" src="static/img/segment.png" alt=""></a>
-              <a  href="#"  role="button" ><img width="20px" src="static/img/polygone.png" alt=""></a>
-              <a href="#"  role="button" ><img width="20px" src="static/img/carre.png" alt=""></a>
-              <a  href="#"  role="button" ><img width="30px" src="static/img/address.png" alt=""></a>
-            </div> 
-            <div class="leaflet-control leaflet-bar leaflet-control" style="margin-left: 2%;margin-top: 2%; background-color: white; ">        
-              <a  href="#" role="button" ><img width="20px" src="static/img/edit.png" alt=""></a>
-              <a  href="#" role="button" ><img width="20px" src="static/img/delete.png" alt=""></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 divRight">
-          <h4>If you want to insert a new label,  click on the <br> button  below to see the input form.</h4>
-          <button type="button" class="btn" id="insert" onclick="functionInsert()">Insert new label</button><br><br>
-         <form action="" id="form" style="display: none;">
-
-            <table >
-              <tr> 
-                <td> shape</td>
-                <td> <input type="text"></td>
-              </tr>
-              <tr>
-                <td>label</td>
-                <td> <input type="text"> </td>
-              </tr>
-            </table><br><br>
-
-            <button type="button" class="btn">Submit</button><br><br><br>
-         </form>       
-          <button type="button" class="btn">show all labels </button>
-        </div>
+ 
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#" style="color: rgb(209, 106, 10) ; font-size: 30px;">Skills Of Life</a>
     </div>
    
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Inscription</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Connexion</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-euro"></span> Don</a></li>
+    </ul>
+  </div>
+</nav>
+<div class=" text-center">
+  <a href="#" title="Zoom out" role="button" ><img width="20%" src="static/img/logo.png" alt=""></a>
+
+  <form class="rechercher row" action="/action_page.php" style=" margin: 5% 20% 10px 20%; ">
+    <div class="form-group col-sm-10">
+      <input type="text" class="form-control" placeholder="Que voulez-vos apprendre aujourd'hui?">
+    </div>
+    <button type="submit" class="btn btn-default col-sm-2">RECHERCHER</button>
+  </form>
+</div><br> 
+
+<div class="container">
+  <div class="row">
+    <h4 class="text-center">
+        <strong> 
+          Vous n’avez pas d’idées? Pas de  problème!<br>
+          Aujourd’hui nous vous proposons:
+        </strong> 
+    </h4> <br>
+
+    <div class="col-sm-1"></div>
+    <div class="col-sm-3">
+      <a href="#" title="Zoom out" role="button" ><img width="100%" src="static/img/java.jpg" alt=""></a>
+      <h3>Devenir développeur JAVA</h3>
+      <p>Vous voulez devenir DÉVELOPPEUR JAVA et vous ne savez pas PAR QUOI COMMENCER ? Vous êtes au bon endroit !</p>
+      </div>
+    <div class="col-sm-3">
+      <a href="#" title="Zoom out" role="button" ><img width="100%" src="static/img/cusine.png" alt=""></a>
+      <h3>Apprendre à cuisiner</h3>
+      <p>
+      Les Français se sentent capables de faire un peu plus de la moitié (8,4 plats) des 16 grands classiques de la cuisine française  proposés par l’enquête Ipsos : les crêpes, la tarte aux pommes, la quiche lorraine, le gratin dauphinois, la pizza, la mayonnaise, la mousse au chocolat, le boeuf bourguignon, la blanquette de veau, le gigot d’agneau, l’île flottante, la charlotte aux fraises, la sole meunière, le couscous, le cassoulet et la soupe de poissons.
+      
+      Et vous, seriez-vous capables de réaliser ces plats ?
+      
+      Pas de panique si la réponse est non, Superprof est là pour vous y aider gratuitement grâce à des supports sur internet.</p>
+    </div>
+    <div class="col-sm-3">
+      <a href="#" title="Zoom out" role="button" ><img width="100%" src="static/img/astronaute.png" alt=""></a>
+      <h3>To become an astronaut</h3>        
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
 </div>
-<script>
-    // bornes pour empecher la carte  de "dériver" trop loin...
-    var northWest = L.latLng(90, -180);
-    var southEast = L.latLng(-90, 180);
-    var bornes = L.latLngBounds(northWest, southEast); 
-    // Initialisation de la couche   
-
-    var map = L.map('map').setView([51.505, -0.09], 2);
-     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-     }).addTo(map);
-    
-    // Initialisation de la carte et association avec la div
-    var map = new L.Map('map', {
-        center: [48.858376, 2.294442],
-        minZoom: 1,
-        maxZoom: 1,
-        zoom:1,
-        maxBounds: bornes
-    });
-    
- 
-    // Juste pour changer la forme du curseur par défaut de la souris
-    document.getElementById('map').style.cursor = 'crosshair'
-
-    // Initilisation d'un popup
-    var popup = L.popup();
-    // Fonction de conversion au format GeoJSON
-    function coordGeoJSON(latlng,precision) { 
-        return '[' +
-        L.Util.formatNum(latlng.lng, precision) + ',' +
-        L.Util.formatNum(latlng.lat, precision) + ']';
-    }
-    // Fonction qui réagit au clic sur la carte (e contiendra les données liées au clic)
-    function onMapClick(e) {
-        popup.setLatLng(e.latlng)
-        .setContent("BONJOUR ET BIENVENUE CHOISISSEZ UNE ACTION POUR CONTINUER !")
-        .openOn(map);
-    }
-    // Association Evenement/Fonction handler
-    map.on('click', onMapClick);
-
-    function functionInsert()
-    {
-      var divForm = document.getElementById("form");
-      var divInsert = document.getElementById("insert");
-      if(divForm.style.display == "none"){
-        divForm.style.display = "block";
-        divInsert.style.background = "Teal"
-
-      }
-      else {
-        divForm.style.display = "none";
-        divInsert.style.background = "white"
-
-      }
-    }
-
-</script>
 
 </body>
+<footer>
+
+  <div class="footer row">
+    <div class="col-sm-3"> 
+        <h4>Skills Of Life</h4><br>
+      <a class="foo" href="#"> Forum</a> <br>
+      <a class="foo" href="#"> Blog</a>
+    </div>
+    <div class="col-sm-3"> 
+        <h4>Nous contacter</h4><br>
+        
+            
+          
+              <a class="foo" href="#">
+                    <span class="glyphicon glyphicon-earphone"></span>
+                </a><br>
+            
+              <a class="foo" href="#">
+                    <span class="glyphicon glyphicon-envelope"></span>
+                </a>
+        <br>
+          
+              <a class="foo" href="#">FAQ</a>
+            <br>
+            <a class="foo" href="#">Nous rejoindre</a>
+        
+    </div>
+    <div class="col-sm-3"> 
+        <h4> confidentialité</h4><br>
+      <a class="foo" href="#">Conditions générales d'utilisation</a><br>
+      <a class="foo" href="#">Politique de Protection des données personnelles</a>
+    </div>
+    <div class="col-sm-3"> 
+      <h4></h4>
+        <form>
+            <div class="form-group row">
+              <!-- <div class="col-sm-1">  <a href="#"  class="glyphicon glyphicon-globe">
+                
+                </a></div> -->
+                <div class="col-sm-11 pull-right">
+                    <select class="form-control" id="sel1">
+                        <option>Français</option>
+                        <option>English</option>
+                    </select>
+                </div>
+            
+            </div>
+        </form><br>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-2"> <a class="foo" href="#" ><img width="100%" height="25px" src="static/img/facebook.png" alt=""></a></div>
+            <div class="col-sm-2"><a  class="foo" href="#" ><img width="100%" height="25px"  src="static/img/tweeter.png" alt=""></a></div>
+            <div class="col-sm-2"> <a class="foo" href="#" ><img width="100%" height="25px"  src="static/img/linkedin.png" alt=""></a></div>
+            <div class="col-sm-2"><a class="foo" href="#" ><img width="100%" height="25px"  src="static/img/instagram.png" alt=""></a></div>
+            <div class="col-sm-2"><a class="foo" href="#" ><img width="100%" height="25px"  src="static/img/youtube.png" alt=""></a></div>
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+  </div>
+
+</footer>
 </html>
