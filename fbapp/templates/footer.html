@@ -47,7 +47,7 @@
 }
 
 .footer {
-   position: fixed;
+   position: relative;
    left: 0;
    bottom: 0;
    width: 100%;
@@ -55,7 +55,8 @@
    color: white;
    text-align: center;
    height: 200px;
-
+   /* haut | droit | bas | gauche */ 
+   margin:1px 10% 0px 10%;
 }
 .foo{
     color: white;
@@ -71,10 +72,7 @@
 </head>
 <body>
     
-      
-<h2>Fixed/Sticky Footer Example</h2>
-<p>The footer is placed at the bottom of the page.</p>
-
+ 
 <div class="footer row">
     <div class="col-sm-3"> 
         <h4>Skills Of Life</h4><br>

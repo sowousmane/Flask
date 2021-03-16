@@ -1,200 +1,166 @@
-<!DOCTYPE html>
-<html>
-<style>
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="static/css/style.css">
+    <a href="{{ url_for('index')}}" title="Zoom out" role="button" ><img width="90px" src="static/img/logo.png" alt=""></a>
+<div class="generale">
 
-/* Full-width input fields
-input[type=text], input[type=password] */
-.formu {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
-/* Add a background color when the inputs get focus */
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-/* Set a style for all buttons */
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
-
-button:hover {
-  opacity:1;
-}
-
-/* Extra styles for the cancel button */
-.cancelbtn {
-  padding: 14px 20px;
-  background-color: #f44336;
-}
-
-/* Float cancel and signup buttons and add an equal width */
-.cancelbtn, .signupbtn {
-  float: left;
-  width: 50%;
-}
-
-/* Add padding to container elements */
-.container {
-  padding: 16px;
-}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: #474e5d;
-  padding-top: 50px;
-}
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
-
-/* Style the horizontal ruler */
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
- 
-/* The Close Button (x) */
-.close {
-  position: absolute;
-  right: 35px;
-  top: 15px;
-  font-size: 40px;
-  font-weight: bold;
-  color: #f1f1f1;
-}
-
-.close:hover,
-.close:focus {
-  color: #f44336;
-  cursor: pointer;
-}
-
-/* Clear floats */
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}   
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-  .cancelbtn, .signupbtn {
-     width: 100%;
-  }
-}
-</style>
-<body>
-
-<h2>Modal Signup Form</h2>
-
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Inscription</button>
-
-<div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content" action="/action_page.php">
-    <div class="container">
-      <h1>Inscription</h1>
-      <p>Inscrivez-vous et commencer votre formation sur Skills Of Life</p>
-
-      <hr>
-      <h5> Informations obligatoires</h5>
-      <label for="email"><b>Email*</b></label>
-      <input class="formu" type="text" placeholder="Entrez votre email" name="email" required>
-
-      <label for="psw"><b>Mot de passe*</b></label>
-      <input class="formu" type="password" placeholder="Entrez votre Password" name="psw" required>
-
-      <label for="psw-repeat"><b>Confirmation de mot de passe*</b></label>
-      <input class="formu" type="password" placeholder="Confirmez votre Password" name="psw-repeat" required>
-      
-      <label>
-        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Se souvenir de moi
-      </label>
-      <hr>
-        <div class="row formu">
-            <h3> Informations complementaires</h3>
-            <h5>Plus vous donnerez d'informations au plus les recherches seront précises et plus il sera facile à vos
-                amis de vous retrouver.</h5>
-           
-            <table style="border: none;">
-                <tr>
-                    <td >
-                        <label for="nom" style="margin-right: 105px;"><b>Nom  </b></label>
-                        <input type="text" placeholder="Entrez votre nom" name="nom" >
-                        <br>
-                        <label for="prenom" style="margin-right: 80px;"><b>Prenom</b></label>
-                        <input type="text" placeholder="Entrez votre prenom" name="prenom" >
-                        <br>
-                        <label for="dateNaiss"><b>Date de naissance</b></label>
-                        <input type="date" placeholder="2021-03-16" name="dateNaiss" >
-                    </td>
-                    <td>
-                        <label for="nationnalite"><b>Nationnalité</b></label>
-                        <select class="form-control" >
-                            <option>Français</option>
-                            <option>English</option>
-                        </select><br>
-                        <label for="domaine"><b>Domaine d'étude</b></label>
-                        <select class="form-control" >
-                            <option>Informatique</option>
-                            <option>Mathématiques</option>
-                        </select><br>
-                        <label for="niveau"><b>Niveau d'étude</b></label>
-                        <select class="form-control" >
-                            <option>Français</option>
-                            <option>English</option>
-                        </select>
-                    </td>
-                </tr>
-            </table>
+    
+    <div class="row ">
+        <div class="col-lg-6">
+            <h2>Inscription</h2>
+            Inscrivez-vous et commencez votre formation préférée sur Skills Of Life
+            <form class="form-horizontal" action="/action_page.php">
+                <div class="form-group">
+                  <label class="control-label col-sm-6" for="email">Email:*</label>
+                  <div class="col-sm-6">
+                    <input type="email" class="form-control" id="email" placeholder="Entrez votre email" name="email">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-6" for="pwd">Mot de passe :*</label>
+                  <div class="col-sm-6">          
+                    <input type="password" class="form-control" id="pwd" placeholder="Entrez votre mot de passe" name="pwd">
+                  </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-6" for="pwd1">Confirmez votre mot de passe:*</label>
+                    <div class="col-sm-6">          
+                      <input type="password" class="form-control" id="pwd1" placeholder="Confirmez votre mot de passe" name="pwd1">
+                    </div>
+                  </div>
+                <div class="form-group">        
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="remember"> Remember me</label>
+                    </div>
+                  </div>
+                </div>
+                
+              </form>
+            
         </div>
-      
-      <div class="clearfix">
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signupbtn">Sign Up</button>
-      </div>
+        <div class="col-lg-6">
+            Completez votre profile
+           
+            <style>
+            
+            
+            .container {
+              width: 80%;
+              background-color: #ddd;
+            }
+            
+            .skills {
+              text-align: right;
+              padding-top: 10px;
+              padding-bottom: 10px;
+              color: white;
+            }
+            
+            .html {width: 90%; background-color: #4CAF50;}
+            .css {width: 80%; background-color: #2196F3;}
+            .js {width: 65%; background-color: #f44336;}
+            .php {width: 60%; background-color: #808080;}
+            </style>
+            </head>
+            <body>
+            
+            
+            <br><br><br>
+            <div class="row">
+                <div class="col-sm-2"> HTML</div>
+                <div class="container col-sm-10">
+                  <div class="skills html">90%</div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-sm-2"> CSS</div>
+                <div class="container col-sm-10">
+                <div class="skills css">80%</div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-sm-2"> JS</div>
+                <div class="container col-sm-10">
+                <div class="skills js">65%</div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-sm-2"> PHP</div>
+                <div class="container col-sm-10">
+                <div class="skills php">60%</div>
+                </div>
+            </div>
+            
+            </body>
+            </html>
+        </div>
     </div>
-  </form>
+    <div class="row">
+        <br> <p>Informations complémentaires <br> Plus vous donnerez d'informations  au plus les recherches seront précises et sera facile à vos amis de vous retrouver </p><br>
+       
+        <div class="col-sm-6">
+            
+            <form class="form-horizontal" action="/action_page.php">
+                <div class="form-group">
+                  <label class="control-label col-sm-6" for="nom">Nom</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="nom" placeholder="Entrez votre nom" name="nom">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-6" for="prenom">Prenom:</label>
+                  <div class="col-sm-6">          
+                    <input type="text" class="form-control" id="prenom" placeholder="Entrez votre prenom" name="prenom">
+                  </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-6" for="dateNaiss">Date de naissance:</label>
+                    <div class="col-sm-6">          
+                      <input type="date" class="form-control" id="dateNaiss" placeholder="2021-03-17" name="dateNaiss">
+                    </div>
+                  </div>
+                
+              </form>
+        </div>
+        <div class="col-sm-6">
+            <form class="form-horizontal" action="/action_page.php">
+                <div class="form-group">
+                  <label class="control-label col-sm-6" for="nation">Nationnalité:</label>
+                  <div class="col-sm-6">
+                    <select class="form-control" id="nation">
+                        <option>Français</option>
+                        <option>US</option>
+                    </select>
+                </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-6" for="domaine">Domaine d'études:</label>
+                  <div class="col-sm-6">          
+                    <select class="form-control" id="domaine">
+                        <option>Informatique</option>
+                        <option>Mathématiques</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-6" for="niveau">Niveau d'études:</label>
+                    <div class="col-sm-6">          
+                        <select class="form-control" id="niveau">
+                            <option>Bac + 4</option>
+                            <option>Bac + 3</option>
+                        </select>
+                    </div>
+                  </div>
+                
+              </form>
+              <br>
+          <button type="submit" class="btn btn-primary pull-right">Submit</button>
+        </div>
+    </div>
+   
 </div>
-
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
-
-</body>
-</html>
