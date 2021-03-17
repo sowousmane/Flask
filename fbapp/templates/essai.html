@@ -1,31 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Skills Of Life</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="static/css/style.css">
-  <script src="static/js/main.js"> </script>
-</head>
-<body>
- 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#" style="color: rgb(209, 106, 10) ; font-size: 30px;">Skills Of Life</a>
-    </div>
-   
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#Inscription"><span class="glyphicon glyphicon-user"></span> Inscription</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Connexion</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-euro"></span> Don</a></li>
-    </ul>
-  </div>
-</nav>
+{% extends 'header.html' %}
+
+{% block content %}
+  
 <div class=" text-center">
   <a href="#" title="Zoom out" role="button" ><img width="20%" src="static/img/logo.png" alt=""></a>
 
@@ -33,7 +9,7 @@
     <div class="form-group col-sm-9">
       <input type="text" class="form-control" placeholder="Que voulez-vos apprendre aujourd'hui?">
     </div>
-    <div class="col-sm-3" style="margin-top: -1%;"> 
+    <div class="col-sm-3" > 
         <button type="submit" class="btn btn-default ">RECHERCHER</button>
     </div>  
   </form>
@@ -77,67 +53,39 @@
   
 
 
-
-</body>
-<footer>
-
-  <div class="footer row">
-    <div class="col-sm-3"> 
-        <h4>Skills Of Life</h4><br>
-      <a class="foo" href="#"> Forum</a> <br>
-      <a class="foo" href="#"> Blog</a>
-    </div>
-    <div class="col-sm-3"> 
-        <h4>Nous contacter</h4><br>
-        
-            
-          
-              <a class="foo" href="#">
-                    <span class="glyphicon glyphicon-earphone"></span>
-                </a><br>
-            
-              <a class="foo" href="#">
-                    <span class="glyphicon glyphicon-envelope"></span>
-                </a>
-        <br>
-          
-              <a class="foo" href="#">FAQ</a>
-            <br>
-            <a class="foo" href="#">Nous rejoindre</a>
-        
-    </div>
-    <div class="col-sm-3"> 
-        <h4> confidentialité</h4><br>
-      <a class="foo" href="#">Conditions générales d'utilisation</a><br>
-      <a class="foo" href="#">Politique de Protection des données personnelles</a>
-    </div>
-    <div class="col-sm-3"> 
-      <h4></h4>
-        <form>
-            <div class="form-group row">
-              <!-- <div class="col-sm-1">  <a href="#"  class="glyphicon glyphicon-globe">
-                
-                </a></div> -->
-                <div class="col-sm-11 pull-right">
-                    <select class="form-control" id="sel1">
-                        <option>Français</option>
-                        <option>English</option>
-                    </select>
-                </div>
-            
-            </div>
-        </form><br>
-        <div class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-2"> <a class="foo" href="#" ><img width="100%" height="25px" src="static/img/facebook.png" alt=""></a></div>
-            <div class="col-sm-2"><a  class="foo" href="#" ><img width="100%" height="25px"  src="static/img/tweeter.png" alt=""></a></div>
-            <div class="col-sm-2"> <a class="foo" href="#" ><img width="100%" height="25px"  src="static/img/linkedin.png" alt=""></a></div>
-            <div class="col-sm-2"><a class="foo" href="#" ><img width="100%" height="25px"  src="static/img/instagram.png" alt=""></a></div>
-            <div class="col-sm-2"><a class="foo" href="#" ><img width="100%" height="25px"  src="static/img/youtube.png" alt=""></a></div>
-            <div class="col-sm-1"></div>
-        </div>
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Supportez Skills Of Life</h4>
+      </div>
+      <div class="modal-body">
+       
+        <div id="pge">
+              <fieldset><legend>Dons aux oeuvres d'intérêt général ou d'utilité publique</legend>
+              <p><label>Votre don : <input id="don" type="text" onblur="calc(this.value)"><label> ok !</p>
+              <p id="rsp"></p>
+             </fieldset>
+          </div>
+           
+          <script type="text/javascript">
+            function calc(v){var don=+document.getElementById('don').value;
+              var red=(don*0.66).toFixed(2).replace(/(\d)(?=(\d\d\d\b)+)/g,'$1 ');
+              var val=(don*0.34).toFixed(2).replace(/(\d)(?=(\d\d\d\b)+)/g,'$1 ');
+              var ref='<a href="http://www.legifrance.gouv.fr/affichCodeArticle.do?idArticle=LEGIARTI000018619914&cidTexte=LEGITEXT000006069577" target="_blank">Référence : Code général des impôts - Article 200</a>';
+              document.getElementById('rsp').innerHTML='Votre réduction d\'impôts : <span class="red">'+red+' €</span><br>Coût effectif : <b>'+val+'</b> €<br>'+ref;
+              document.getElementById('don').value=(+don).toFixed(2).replace(/(\d)(?=(\d\d\d\b)+)/g,'$1 ')+' €';
+}
+          </script>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
     </div>
   </div>
+</div>
+</body>
+{% include "footer.html" %}
 
-</footer>
-</html>
+{% endblock %}

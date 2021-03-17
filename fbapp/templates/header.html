@@ -15,19 +15,22 @@
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
               <div class="navbar-header">
-                <a class="navbar-brand" href="#" style="color: rgb(209, 106, 10) ; font-size: 30px;">Skills Of Life</a>
+                <a class="navbar-brand" href="{{ url_for('index')}}" style="color: rgb(209, 106, 10) ; font-size: 30px;">Skills Of Life</a>
               </div>
              
               <ul class="nav navbar-nav navbar-right">
                 <li><a a href="{{ url_for('inscription')}}"><span class="glyphicon glyphicon-user"></span> Inscription</a></li>
                 <li><a href="{{ url_for('connexion')}}"><span class="glyphicon glyphicon-log-in"></span> Connexion</a></li>
-                <li><a href="{{ url_for('don')}}"><span class="glyphicon glyphicon-euro"></span> Don</a></li>
+                <li><a type="button" class="btn " data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-euro"></span> Don</a></li>
               </ul>
             </div>
           </nav>
             
         <div class="container">
-            {% block content %} {% endblock %}
+            {% block content %} 
+            
+            
+            {% endblock %}
         </div>
     
     

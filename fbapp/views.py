@@ -14,8 +14,8 @@ def inscription():
 def connexion():
     return render_template('connection.html')
 
-@app.route('/don')    
-def don():
-    return render_template('don.html')
+@app.route('/user')    
+def user():
+    return render_template('user.html')
 
 

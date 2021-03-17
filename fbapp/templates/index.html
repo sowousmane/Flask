@@ -1,7 +1,7 @@
 {% extends 'header.html' %}
 
 {% block content %}
-   
+  
 <div class=" text-center">
   <a href="#" title="Zoom out" role="button" ><img width="20%" src="static/img/logo.png" alt=""></a>
 
@@ -53,7 +53,38 @@
   
 
 
-
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Supportez Skills Of Life</h4>
+      </div>
+      <div class="modal-body">
+       
+        <div id="pge">
+              <fieldset><legend>Dons aux oeuvres d'intérêt général ou d'utilité publique</legend>
+              <p><label>Votre don : <input id="don" type="text" onblur="calc(this.value)"><label> ok !</p>
+              <p id="rsp"></p>
+             </fieldset>
+          </div>
+           
+          <script type="text/javascript">
+            function calc(v){var don=+document.getElementById('don').value;
+              var red=(don*0.66).toFixed(2).replace(/(\d)(?=(\d\d\d\b)+)/g,'$1 ');
+              var val=(don*0.34).toFixed(2).replace(/(\d)(?=(\d\d\d\b)+)/g,'$1 ');
+              var ref='<a href="http://www.legifrance.gouv.fr/affichCodeArticle.do?idArticle=LEGIARTI000018619914&cidTexte=LEGITEXT000006069577" target="_blank">Référence : Code général des impôts - Article 200</a>';
+              document.getElementById('rsp').innerHTML='Votre réduction d\'impôts : <span class="red">'+red+' €</span><br>Coût effectif : <b>'+val+'</b> €<br>'+ref;
+              document.getElementById('don').value=(+don).toFixed(2).replace(/(\d)(?=(\d\d\d\b)+)/g,'$1 ')+' €';
+}
+          </script>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" >Envoyez</button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 {% include "footer.html" %}
 

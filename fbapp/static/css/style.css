@@ -15,7 +15,17 @@
   width: 50%;
   margin: auto;
 }
-.passwordOublie{
-  color: rgb(207, 17, 17);
-  text-align: center;
+#pge{display:block;width:auto;margin:0 auto;background-color:#ffd;padding:5px;text-align:center;}
+input {text-align:center;}
+.red {color:#f00;font-weight:bold;}
+
+.circle{
+  margin: 10% 20% 10% 50%;
+  width:100px;
+  height:100px;
+  text-align:center;
+  border-radius:100px;
+  border: 1px;
+  border: 1px solid rgb(151, 18, 0);
+  line-height: 90px; 
 }

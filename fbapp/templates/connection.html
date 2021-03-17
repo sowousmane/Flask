@@ -29,12 +29,13 @@
       <div class="form-group">     
         <div class=" row ">
           <label class="col-sm-4 col-sm-offset-2"><input type="checkbox" name="remember"> Se souvenir de moi</label>
-          <button type="submit" class="col-sm-3  btn btn-primary">Submit</button>
+        
         </div>
+        <br> <a href="{{ url_for('user')}}" type="submit" class="col-sm-offset-2 col-sm-3  btn btn-primary">Se connecter</a>
+        <br>
       </div>
-      <div class="passwordOublie" > <a href="#"> mot de passe oublié?</a> <br></div>
-      Vous n'avez pas encore de compte ? <a href="#">Inscrivez-vous gratuitement</a> <br>
-      
+       <a  href="#" style="color: rgb(156, 156, 156);margin-left: 15%;"> mot de passe oublié?</a> <br>
+     <p style="margin-bottom: 10%;"> Vous n'avez pas encore de compte ? <a href="#">Inscrivez-vous gratuitement</a> <br>     </p>
     </form>
 
   </div>
