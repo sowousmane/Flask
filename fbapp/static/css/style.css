@@ -11,3 +11,11 @@
   text-align: center;
   margin: 10%;
 }
+.checkbox{
+  width: 50%;
+  margin: auto;
+}
+.passwordOublie{
+  color: rgb(207, 17, 17);
+  text-align: center;
+}

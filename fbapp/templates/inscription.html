@@ -3,36 +3,37 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="static/css/style.css">
     <a href="{{ url_for('index')}}" title="Zoom out" role="button" ><img width="90px" src="static/img/logo.png" alt=""></a>
-<div class="generale">
-
-    
-    <div class="row ">
+    <h1 style="text-align: center; font-size: 50px;">Inscription</h1>
+   
+    <div class="generale">
+ 
+    <div class="row "> 
         <div class="col-lg-6">
-            <h2>Inscription</h2>
+            
             Inscrivez-vous et commencez votre formation préférée sur Skills Of Life
             <form class="form-horizontal" action="/action_page.php">
                 <div class="form-group">
                   <label class="control-label col-sm-6" for="email">Email:*</label>
                   <div class="col-sm-6">
-                    <input type="email" class="form-control" id="email" placeholder="Entrez votre email" name="email">
+                    <input type="email" class="form-control" id="email" placeholder="Entrez votre email" name="email" required>
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label col-sm-6" for="pwd">Mot de passe :*</label>
                   <div class="col-sm-6">          
-                    <input type="password" class="form-control" id="pwd" placeholder="Entrez votre mot de passe" name="pwd">
+                    <input type="password" class="form-control" id="pwd" placeholder="Entrez votre mot de passe" name="pwd" required>
                   </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-sm-6" for="pwd1">Confirmez votre mot de passe:*</label>
                     <div class="col-sm-6">          
-                      <input type="password" class="form-control" id="pwd1" placeholder="Confirmez votre mot de passe" name="pwd1">
+                      <input type="password" class="form-control" id="pwd1" placeholder="Confirmez votre mot de passe" name="pwd1" required>
                     </div>
                   </div>
                 <div class="form-group">        
                   <div class="col-sm-offset-2 col-sm-10">
                     <div class="checkbox">
-                      <label><input type="checkbox" name="remember"> Remember me</label>
+                      <label><input type="checkbox" name="remember"> Se souvenir de moi</label>
                     </div>
                   </div>
                 </div>
@@ -41,7 +42,7 @@
             
         </div>
         <div class="col-lg-6">
-            Completez votre profile
+           <p style="color: rgb(105, 191, 218);"> Completez votre profile</p>
            
             <style>
             
@@ -67,9 +68,9 @@
             <body>
             
             
-            <br><br><br>
+           
             <div class="row">
-                <div class="col-sm-2"> HTML</div>
+                <div class="col-sm-2"> Biographie</div>
                 <div class="container col-sm-10">
                   <div class="skills html">90%</div>
                 </div>
@@ -123,12 +124,29 @@
                     <div class="col-sm-6">          
                       <input type="date" class="form-control" id="dateNaiss" placeholder="2021-03-17" name="dateNaiss">
                     </div>
-                  </div>
-                
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-6" for="pays">pays:</label>
+                    <div class="col-sm-6">
+                      <select class="form-control" id="pays">
+                          <option>France</option>
+                          <option>Angleterre</option>
+                      </select>
+                    </div>
+                </div>
               </form>
         </div>
         <div class="col-sm-6">
             <form class="form-horizontal" action="/action_page.php">
+                <div class="form-group">
+                    <label class="control-label col-sm-6" for="ville">Ville:</label>
+                    <div class="col-sm-6">
+                      <select class="form-control" id="ville">
+                          <option>Paris</option>
+                          <option>Nice</option>
+                      </select>
+                    </div>
+                </div>
                 <div class="form-group">
                   <label class="control-label col-sm-6" for="nation">Nationnalité:</label>
                   <div class="col-sm-6">
@@ -155,7 +173,7 @@
                             <option>Bac + 3</option>
                         </select>
                     </div>
-                  </div>
+                </div>
                 
               </form>
               <br>
@@ -164,3 +182,4 @@
     </div>
    
 </div>
+{% include "footer.html" %}
