@@ -17,7 +17,13 @@
     </div>
     
     <div class="circle">
-        User
+        {% for post in posts %}
+            <a href="{{ url_for('post', post_id=post['id']) }}">
+                <h2>{{ post['nom'] }}</h2>
+            </a>
+            <span class="badge badge-primary">{{ post['prenom'] }}</span>
+            <hr>
+        {% endfor %}
     </div>
 </body>
 

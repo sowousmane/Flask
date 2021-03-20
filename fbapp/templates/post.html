@@ -1,0 +1,7 @@
+{% extends 'header.html' %}
+
+{% block content %}
+    <h2>{% block title %} {{ post['nom'] }} {% endblock %}</h2>
+    <span class="badge badge-primary">{{ post['prenom'] }}</span>
+    <p>{{ post['content'] }}</p>
+{% endblock %}
