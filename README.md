@@ -11,10 +11,10 @@ It is a set of modules that allow you to develop faster by providing common func
 
 
 
-To test if this project is working well you have install Flask in your local computer by following the instructions bellow:  
-- You have **clone the project** in your computer  
-- change the branch because after clonning the project **you'll be in the main branch so you have to do: git checkout master**  so you'll be in the master branch  
-- **ls** to verify if really you have the project in your computer.  
+To test if this project is working well you have to install Flask in your local computer by following the instructions bellow:  
+- You have to **clone the project** in your computer  
+- to change the branch because after clonning the project **you'll be in the main branch so you have to do: git checkout SkillsOfLife**  so you'll be in the master branch  
+- to **ls** to verify if really you have the project in your computer.  
 
 **Now let's insttaling flask**   
 => virtualenv env -p python3  
