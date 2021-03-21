@@ -13,7 +13,9 @@ It is a set of modules that allow you to develop faster by providing common func
 To test if this project works well, you need to install Flask on your local computer following the instructions below:
 
 - You must **clone the project** on your computer.
+
  You have to change branch because after cloning the project you will be in the **main branch** so you have to do : 
+ 
 - git checkout SkillsOfLife  so you will be in the **SkillsOfLife** branch
 - ls to check if you really have the right project in your computer.
 
