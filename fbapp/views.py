@@ -19,7 +19,7 @@ def user():
     conn = get_db_connection()
     posts = conn.execute('SELECT * FROM utilisateurs').fetchall()
     conn.close()
-    return render_template('user.html', posts=posts)
+    return render_template('user.html', post=posts)
 
 
 
