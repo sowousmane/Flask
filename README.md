@@ -16,7 +16,7 @@ To test if this project works well, you need to install Flask on your local comp
  You have to change branch because after cloning the project you will be in the **main branch** so you have to do : 
 - git checkout SkillsOfLife  so you will be in the **SkillsOfLife** branch
 - ls to check if you really have the right project in your computer.
-- 
+
 **Now let's install flask**
 
 => virtualenv env -p python3  
