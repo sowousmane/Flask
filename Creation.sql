@@ -9,6 +9,8 @@ CREATE TABLE utilisateurs (
     prenom TEXT ,
     date_naiss TIMESTAMP  DEFAULT CURRENT_TIMESTAMP,
     nationnalite TEXT ,
+    pays TEXT,
+    ville TEXT,
     domaine_d_etude TEXT ,
     niveau_d_etude TEXT 
 );

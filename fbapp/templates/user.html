@@ -15,16 +15,14 @@
 <body>
     <div><a href="{{ url_for('index')}}" title="Zoom out" role="button" ><img width="90px" src="static/img/logo.png" alt=""></a>
     </div>
-    
+    <h3 style="text-align: center;">Bienvenu dans ton espace </h3>
     <div class="circle">
-        {% for post in posts %}
-            <a href="{{ url_for('post', post_id=post['id']) }}">
-                <h2>{{ post['nom'] }}</h2>
-            </a>
-            <span class="badge badge-primary">{{ post['prenom'] }}</span>
-            <hr>
-        {% endfor %}
+                
+        {% block content %}
+        <h2>{% block title %} {{ post['Prenom'] }} {% endblock %}</h2>
+        {% endblock %}
     </div>
+    <h3 style="text-align: center;"> Tu vas bien t'amuser</h3>
 </body>
 
 </html>
