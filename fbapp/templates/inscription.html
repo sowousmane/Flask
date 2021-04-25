@@ -6,29 +6,29 @@
 <h1 style="text-align: center; font-size: 50px;">Inscription</h1>
    
 <div class="generale">
-  <form method="post" class="form-horizontal" action="/action_page.php">
-    <div class="row "> 
+  <form method="POST" class="form-horizontal"  >
+    <div class="row ">
       <div class="col-lg-6">
         Inscrivez-vous et commencez votre formation préférée sur Skills Of Life
         <div class="form-group">
           <label class="control-label col-sm-6" for="email">Email:*</label>
           <div class="col-sm-6">
-            <input type="email" value="{{ request.form['mail'] }}" class="form-control" id="email" placeholder="Entrez votre email" name="email" required>
+            <input type="email"  class="form-control" id="email" placeholder="Entrez votre email" name="email" required>
           </div>
         </div>
         <div class="form-group">
           <label class="control-label col-sm-6"  for="pwd">Mot de passe :*</label>
-          <div class="col-sm-6">          
-            <input type="password" value="{{ request.form['mot_de_passe'] }}" class="form-control" id="pwd" placeholder="Entrez votre mot de passe" name="pwd" required>
+          <div class="col-sm-6">
+            <input type="password"  class="form-control" id="pwd" placeholder="Entrez votre mot de passe" name="pwd" required>
           </div>
         </div>
         <div class="form-group">
           <label class="control-label col-sm-6" for="pwd1">Confirmez votre mot de passe:*</label>
-          <div class="col-sm-6">          
-            <input type="password" value="{{ request.form['mot_de_passe'] }}" class="form-control" id="pwd1" placeholder="Confirmez votre mot de passe" name="pwd1" required>
+          <div class="col-sm-6">
+            <input type="password"  class="form-control" id="pwd1" placeholder="Confirmez votre mot de passe" name="pwd1" required>
           </div>
         </div>
-        <div class="form-group">        
+        <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
             <div class="checkbox">
               <label><input type="checkbox" name="remember"> Se souvenir de moi</label>
@@ -60,70 +60,70 @@
             <div class="skills html">90%</div>
           </div>
         </div>
-            
+
         <div class="row">
           <div class="col-sm-2"> CSS</div>
           <div class="container col-sm-10">
           <div class="skills css">80%</div>
           </div>
         </div>
-            
+
         <div class="row">
           <div class="col-sm-2"> JS</div>
           <div class="container col-sm-10">
           <div class="skills js">65%</div>
           </div>
         </div>
-        
+
         <div class="row">
           <div class="col-sm-2"> PHP</div>
           <div class="container col-sm-10">
           <div class="skills php">60%</div>
           </div>
         </div>
-            
-         
+
+
       </div>
     </div>
     <div class="row">
       <br> <p>Informations complémentaires <br> Plus vous donnerez d'informations  au plus les recherches seront précises et sera facile à vos amis de vous retrouver </p><br>
-       
+
       <div class="col-sm-6">
         <div class="form-group">
           <label class="control-label col-sm-6" for="nom">Nom</label>
           <div class="col-sm-6">
-            <input type="text" value="{{ request.form['nom'] }}"  class="form-control" id="nom" placeholder="Entrez votre nom" name="nom">
+            <input type="text"   class="form-control" id="nom" placeholder="Entrez votre nom" name="nom">
           </div>
         </div>
         <div class="form-group">
           <label class="control-label col-sm-6" for="prenom">Prenom:</label>
-          <div class="col-sm-6">          
-            <input type="text" value="{{ request.form['prenom'] }}" class="form-control" id="prenom" placeholder="Entrez votre prenom" name="prenom">
+          <div class="col-sm-6">
+            <input type="text"  class="form-control" id="prenom" placeholder="Entrez votre prenom" name="prenom">
           </div>
         </div>
         <div class="form-group">
           <label class="control-label col-sm-6" for="date_naiss">Date de naissance:</label>
-          <div class="col-sm-6">          
-            <input type="date" value="{{ request.form['date_naiss'] }}" class="form-control" id="date_naiss" placeholder="2021-03-17" name="date_naiss">
+          <div class="col-sm-6">
+            <input type="date"  class="form-control" id="date_naiss" placeholder="2021-03-17" name="date_naiss">
           </div>
         </div>
         <div class="form-group">
           <label class="control-label col-sm-6" for="pays">pays:</label>
           <div class="col-sm-6">
-            <select class="form-control" id="pays" value="{{ request.form['pays'] }}">
+            <select class="form-control" id="pays" name="pays">
               <option>France</option>
               <option>Angleterre</option>
             </select>
           </div>
         </div>
-            
+
       </div>
       <div class="col-sm-6">
-            
+
         <div class="form-group">
           <label class="control-label col-sm-6" for="ville">Ville:</label>
           <div class="col-sm-6">
-            <select class="form-control" id="ville" value="{{ request.form['ville'] }}" >
+            <select class="form-control" id="ville" name="ville"  >
               <option>Paris</option>
               <option>Nice</option>
             </select>
@@ -132,7 +132,7 @@
         <div class="form-group">
           <label class="control-label col-sm-6" for="nationnalite">Nationnalité:</label>
           <div class="col-sm-6">
-            <select class="form-control" id="nationnalite" value="{{ request.form['nationnalite'] }}">
+            <select class="form-control" id="nationnalite" name="nationnalite">
               <option>Français</option>
               <option>US</option>
             </select>
@@ -140,8 +140,8 @@
         </div>
         <div class="form-group">
           <label class="control-label col-sm-6" for="domaine_d_etude">Domaine d'études:</label>
-          <div class="col-sm-6">          
-            <select class="form-control" id="domaine_d_etude" value="{{ request.form['domaine_d_etude'] }}">
+          <div class="col-sm-6">
+            <select class="form-control" id="domaine_d_etude" name="domaine_d_etude">
               <option>Informatique</option>
               <option>Mathématiques</option>
             </select>
@@ -149,14 +149,15 @@
         </div>
         <div class="form-group">
           <label class="control-label col-sm-6" for="niveau_d_etude">Niveau d'études:</label>
-          <div class="col-sm-6">          
-            <select class="form-control" id="niveau_d_etude" value="{{ request.form['niveau_d_etude'] }}">
+          <div class="col-sm-6">
+            <select class="form-control" id="niveau_d_etude" name="niveau_d_etude">
               <option>Bac + 4</option>
               <option>Bac + 3</option>
+              <option>Bac</option>
             </select>
           </div>
         </div><br>
-        <a href="{{ url_for('connexion')}}" type="submit" class="btn btn-primary pull-right">S'inscrire</a>
+        <button type="submit">S'inscrire</button>
       </div>
     </div>
   </form>

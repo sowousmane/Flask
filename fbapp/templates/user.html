@@ -8,7 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="static/css/style.css">
-  
+
 </head>
 
     
@@ -17,13 +17,123 @@
     </div>
     <h3 style="text-align: center;">Bienvenu dans ton espace </h3>
     <div class="circle">
-                
-        <!-- {% block content %}
-        <h2>{% block title %} {{ post['Prenom'] }} {% endblock %}</h2>
-        {% endblock %} -->
-        Nada
+       {{user}}
     </div>
-    <h3 style="text-align: center;"> Tu vas bien t'amuser</h3>
+
+    <div class="row container">
+        <div class="row col-md-6 container">
+            <h3>SOFT SKILLS</h3>
+
+            <h5>1 - {{ formations[0].titre }} </h5>
+            <h6>{{ formations[0].description_formation }} </h6>
+
+            <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal11">
+                Cliquez ici pour y accéder
+            </button><br><br>
+
+            <div class="col-md-2">|_______</div>
+            <div class="col-md-6">
+                 {% for sf in sous_formations1 %}
+                <span class="badge badge-info">{{sf.active}}</span> <br>
+                    <h5>{{sf.id}} - {{ sf.titre }} </h5>
+                    <h6>{{ sf.description_formation }} </h6>
+
+                        {% if sf.active==1 %}
+                           <a href="{{sf.url_formation}}" target="_blank">Cliquez ici pour y accéder</a>
+                            {% else %}
+                            <h5 style="color:red">Vous devez d'abord terminer la formation mère</h5>
+
+                        {% endif %}
+                {% endfor %}
+                <br><br><br><br>
+            </div>
+
+
+            <br><br><br><br>
+                <div class="col-md-12 row container">
+            <h5>2 - {{ formations[1].titre }} </h5>
+            <h6>{{ formations[1].description_formation }} </h6>
+            <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal22">
+                Cliquez ici pour y accéder
+            </button><br><br>
+
+
+            <div class="col-md-2">|_______</div>
+            <div class="col-md-6">
+                 {% for sf in sous_formations2 %}
+                 <span class="badge badge-info">{{sf.active}}</span> <br>
+                    <h5>{{sf.id}} - {{ sf.titre }} </h5>
+                    <h6>{{ sf.description_formation }} </h6>
+
+                {% if sf.active==1 %}
+                <a href="{{sf.url_formation}}" target="_blank">Cliquez ici pour y accéder</a>
+                {% else %}
+                            <h5 style="color:red">Vous devez d'abord terminer la formation mère</h5>
+                {% endif %}
+                {% endfor %}
+                <br><br><br><br>
+            </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <h3>HARD SKILLS</h3>
+            {% for sf in sous_formations %}
+            <p>{{ sf.description_formation }} </p>
+            {% endfor %}
+        </div>
+
+      </div>
+
+
+
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal11" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-footer">
+          <form method="post">
+              <input name="essai" type="hidden" value="update">
+              <input name="id_formation" type="hidden" value="1">
+              <input name="id_sous_formation" type="hidden" value="1">
+              <button type="submit" class="btn btn-success">Je confirme avoir terminé cette formation :)</button>
+          </form>
+
+      <button class="btn btn-warning">  <a role="button" href="{{formations[0].url_formation}}" target="_blank">Cliquez ici pour y accéder</a> </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ <!-- Modal -->
+<div class="modal fade" id="exampleModal22" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-footer">
+         <form method="post">
+              <input name="essai" type="hidden" value="update">
+              <input name="id_formation" type="hidden" value="2">
+              <input name="id_sous_formation" type="hidden" value="2">
+              <button type="submit" class="btn btn-success">Je confirme avoir terminé cette formation :)</button>
+          </form>
+      <button class="btn btn-warning">  <a role="button" href="{{formations[1].url_formation}}" target="_blank">Cliquez ici pour y accéder</a> </button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 
 </html>

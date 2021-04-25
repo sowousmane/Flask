@@ -12,7 +12,7 @@
    
   <div class="container  ">
     
-    <form class="form-horizontal checkbox" action="/action_page.php">
+    <form method="post" class="form-horizontal checkbox">
       <h1 style="color: rgb(107, 73, 151);">Connetcez-vous à votre compte </h1>
       <h1 style=" margin-left: 22%; color: rgb(107, 73, 151);"> Skills Of Life </h1>
    
@@ -31,7 +31,7 @@
           <label class="col-sm-4 col-sm-offset-2"><input type="checkbox" name="remember"> Se souvenir de moi</label>
         
         </div>
-        <br> <a href="{{ url_for('user')}}" type="submit" class="col-sm-offset-2 col-sm-3  btn btn-primary">Se connecter</a>
+        <br> <button type="submit" class="col-sm-offset-2 col-sm-3  btn btn-primary">Se connecter</button>
         <br>
       </div>
        <a  href="#" style="color: rgb(156, 156, 156);margin-left: 15%;"> mot de passe oublié?</a> <br>

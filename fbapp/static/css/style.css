@@ -29,3 +29,76 @@ input {text-align:center;}
   border: 1px solid rgb(151, 18, 0);
   line-height: 90px; 
 }
+
+.arbre,
+.tree ul,
+.tree li {
+    style liste: aucun;
+    marge: 0;
+    rembourrage: 0;
+    position: relative;
+}
+
+.arbre {
+    marge: 0 0 1em;
+    text-align: centre;
+}
+
+.arbre,
+.tree ul {
+    affichage: table;
+}
+
+.tree ul {
+    largeur: 100%;
+}
+
+.tree li {
+    affichage: table-cellule;
+    rembourrage: .5em 0;
+    alignement vertical: haut;
+}
+
+.tree li: avant {
+    contour: solide 1px # 666;
+    contenu: "";
+    gauche: 0;
+    position: absolue;
+    droite: 0;
+    haut: 0;
+}
+
+.tree li: premier enfant: avant {
+    gauche: 50%;
+}
+
+.tree li: dernier-enfant: avant {
+    à droite: 50%;
+}
+
+code .tree,
+.tree span {
+    bordure: solide .1em # 666;
+    rayon de la frontière: .2em;
+    affichage: bloc en ligne;
+    marge: 0 .2em .5em;
+    rembourrage: .2em .5em;
+    position: relative;
+}
+
+.tree ul: avant,
+code .tree: avant,
+.tree span: avant {
+    contour: solide 1px # 666;
+    contenu: "";
+    hauteur: .5em;
+    gauche: 50%;
+    position: absolue;
+}
+
+.tree ul: avant {
+    haut: -.5em;
+}
+
+code .tree: avant,
+.tree span
