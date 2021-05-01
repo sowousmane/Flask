@@ -25,7 +25,7 @@ To test if this project works well, you need to install Flask on your local comp
 => . env/bin/activate **don't forget the dot(.)**  
 => pip install flask  
 Now you can launch your flask application by typing this command **in my case**  
-**python3 app.py**  
+**python3 fbapp/app.py**  
 
 *After that you'll see something like this in your terminal that means your app is running sussefuly.  
  Serving Flask app "fbapp.views" (lazy loading)*  

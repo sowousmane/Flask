@@ -15,125 +15,161 @@
 <body>
     <div><a href="{{ url_for('index')}}" title="Zoom out" role="button" ><img width="90px" src="static/img/logo.png" alt=""></a>
     </div>
-    <h3 style="text-align: center;">Bienvenu dans ton espace </h3>
+    <h3 style="text-align: center;">Bienvenu dans ton espace <br>
+        <a href="{{ url_for('connexion')}}" title="Zoom out" role="button" >Se déconnecter</a></h3>
+
     <div class="circle">
        {{user}}
     </div>
+
 
     <div class="row container">
         <div class="row col-md-6 container">
             <h3>SOFT SKILLS</h3>
 
-            <h5>1 - {{ formations[0].titre }} </h5>
+            <h5>{{formations[0].id}} - {{ formations[0].titre }} </h5>
             <h6>{{ formations[0].description_formation }} </h6>
 
-            <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal11">
-                Cliquez ici pour y accéder
-            </button><br><br>
+            <button class="btn btn-warning">
+                <a role="button" href="{{formations[0].url_formation}}" target="_blank">Cliquez ici pour y accéder</a> </button>
+            <form method="post">
+              <input name="essai" type="hidden" value="update">
+                <input name="id_user" type="hidden" value="{{iduser}}">
+                <input name="theUser" type="hidden" value="{{user}}">
+              <input name="id_formation" type="hidden" value="{{formations[0].id}}">
+              <input name="id_sous_formation" type="hidden" value="{{sous_formations[0].id}}">
+                <input name="type_sous_formations" type="hidden" value="{{sous_formations[0].type_sous_formation}}">
+
+              <button type="submit" class="btn btn-success">Je confirme avoir terminé cette formation :)</button>
+          </form>
 
             <div class="col-md-2">|_______</div>
             <div class="col-md-6">
-                 {% for sf in sous_formations1 %}
-                <span class="badge badge-info">{{sf.active}}</span> <br>
-                    <h5>{{sf.id}} - {{ sf.titre }} </h5>
-                    <h6>{{ sf.description_formation }} </h6>
 
-                        {% if sf.active==1 %}
-                           <a href="{{sf.url_formation}}" target="_blank">Cliquez ici pour y accéder</a>
+                <span class="badge badge-info">{{sous_formations[0].active}}</span> <br>
+                    <h5>{{sous_formations[0].id}} - {{ sous_formations[0].titre }} </h5>
+                    <h6>{{ sous_formations[0].description_formation }} </h6>
+
+                        {% if sous_formations[0].active==1 %}
+                           <a href="{{sous_formations[0].url_formation}}" target="_blank">Cliquez ici pour y accéder</a>
                             {% else %}
                             <h5 style="color:red">Vous devez d'abord terminer la formation mère</h5>
 
                         {% endif %}
-                {% endfor %}
+
                 <br><br><br><br>
             </div>
 
 
             <br><br><br><br>
                 <div class="col-md-12 row container">
-            <h5>2 - {{ formations[1].titre }} </h5>
+            <h5>{{formations[1].id}} - {{ formations[1].titre }} </h5>
             <h6>{{ formations[1].description_formation }} </h6>
-            <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal22">
-                Cliquez ici pour y accéder
-            </button><br><br>
+             <button class="btn btn-warning">
+                <a role="button" href="{{formations[1].url_formation}}" target="_blank">Cliquez ici pour y accéder</a> </button>
+            <form method="post">
+              <input name="essai" type="hidden" value="update">
+                <input name="id_user" type="hidden" value="{{iduser}}">
+                <input name="theUser" type="hidden" value="{{user}}">
+              <input name="id_formation" type="hidden" value="{{formations[1].id}}">
+              <input name="id_sous_formation" type="hidden" value="{{sous_formations[1].id}}">
+                <input name="type_sous_formations" type="hidden" value="{{sous_formations[1].type_sous_formation}}">
+              <button type="submit" class="btn btn-success">Je confirme avoir terminé cette formation :)</button>
+          </form>
 
 
             <div class="col-md-2">|_______</div>
             <div class="col-md-6">
-                 {% for sf in sous_formations2 %}
-                 <span class="badge badge-info">{{sf.active}}</span> <br>
-                    <h5>{{sf.id}} - {{ sf.titre }} </h5>
-                    <h6>{{ sf.description_formation }} </h6>
 
-                {% if sf.active==1 %}
-                <a href="{{sf.url_formation}}" target="_blank">Cliquez ici pour y accéder</a>
+                 <span class="badge badge-info">{{sous_formations[1].active}}</span> <br>
+                    <h5>{{sous_formations[1].id}} - {{ sous_formations[1].titre }} </h5>
+                    <h6>{{ sous_formations[1].description_formation }} </h6>
+
+                {% if sous_formations[1].active==1 %}
+                <a href="{{sous_formations[1].url_formation}}" target="_blank">Cliquez ici pour y accéder</a>
                 {% else %}
                             <h5 style="color:red">Vous devez d'abord terminer la formation mère</h5>
                 {% endif %}
-                {% endfor %}
+
                 <br><br><br><br>
             </div>
             </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="row col-md-6 container">
             <h3>HARD SKILLS</h3>
-            {% for sf in sous_formations %}
-            <p>{{ sf.description_formation }} </p>
-            {% endfor %}
+
+            <h5>{{formations_hard[0].id}} - {{ formations_hard[0].titre }} </h5>
+            <h6>{{ formations_hard[0].description_formation }} </h6>
+
+            <button class="btn btn-warning">
+                <a role="button" href="{{formations_hard[0].url_formation}}" target="_blank">Cliquez ici pour y accéder</a> </button>
+            <form method="post">
+              <input name="essai" type="hidden" value="update">
+                <input name="id_user" type="hidden" value="{{iduser}}">
+                <input name="theUser" type="hidden" value="{{user}}">
+              <input name="id_formation_hard" type="hidden" value="{{formations_hard[0].id}}">
+              <input name="id_sous_formation_hard" type="hidden" value="{{sous_formations_hard[0].id}}">
+                <input name="type_sous_formations" type="hidden" value="{{sous_formations_hard[0].type_sous_formation}}">
+              <button type="submit" class="btn btn-success">Je confirme avoir terminé cette formation :)</button>
+          </form>
+
+            <div class="col-md-2">|_______</div>
+            <div class="col-md-6">
+
+                <span class="badge badge-info">{{sous_formations_hard[0].active}}</span> <br>
+                    <h5>{{sous_formations_hard[0].id}} - {{ sous_formations_hard[0].titre }} </h5>
+                    <h6>{{ sous_formations_hard[0].description_formation }} </h6>
+
+                        {% if sous_formations_hard[0].active==1 %}
+                           <a href="{{sous_formations_hard[0].url_formation}}" target="_blank">Cliquez ici pour y accéder</a>
+                            {% else %}
+                            <h5 style="color:red">Vous devez d'abord terminer la formation mère</h5>
+
+                        {% endif %}
+
+                <br><br><br><br>
+            </div>
+
+
+            <br><br><br><br>
+                <div class="col-md-12 row container">
+            <h5>{{formations_hard[1].id}} - {{ formations_hard[1].titre }} </h5>
+            <h6>{{ formations_hard[1].description_formation }} </h6>
+             <button class="btn btn-warning">
+                <a role="button" href="{{formations_hard[1].url_formation}}" target="_blank">Cliquez ici pour y accéder</a> </button>
+            <form method="post">
+              <input name="essai" type="hidden" value="update">
+                <input name="id_user" type="hidden" value="{{iduser}}">
+                <input name="theUser" type="hidden" value="{{user}}">
+              <input name="id_formation_hard" type="hidden" value="{{formations_hard[1].id}}">
+              <input name="id_sous_formation_hard" type="hidden" value="{{sous_formations_hard[1].id}}">
+                <input name="type_sous_formations" type="hidden" value="{{sous_formations_hard[1].type_sous_formation}}">
+              <button type="submit" class="btn btn-success">Je confirme avoir terminé cette formation :)</button>
+          </form>
+
+
+            <div class="col-md-2">|_______</div>
+            <div class="col-md-6">
+
+                 <span class="badge badge-info">{{sous_formations_hard[1].active}}</span> <br>
+                    <h5>{{sous_formations_hard[1].id}} - {{ sous_formations_hard[1].titre }} </h5>
+                    <h6>{{ sous_formations_hard[1].description_formation }} </h6>
+
+                {% if sous_formations_hard[1].active==1 %}
+                <a href="{{sous_formations_hard[1].url_formation}}" target="_blank">Cliquez ici pour y accéder</a>
+                {% else %}
+                            <h5 style="color:red">Vous devez d'abord terminer la formation mère</h5>
+                {% endif %}
+
+                <br><br><br><br>
+            </div>
+            </div>
         </div>
 
       </div>
 
 
-
-    <!-- Modal -->
-<div class="modal fade" id="exampleModal11" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
-      <div class="modal-footer">
-          <form method="post">
-              <input name="essai" type="hidden" value="update">
-              <input name="id_formation" type="hidden" value="1">
-              <input name="id_sous_formation" type="hidden" value="1">
-              <button type="submit" class="btn btn-success">Je confirme avoir terminé cette formation :)</button>
-          </form>
-
-      <button class="btn btn-warning">  <a role="button" href="{{formations[0].url_formation}}" target="_blank">Cliquez ici pour y accéder</a> </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
- <!-- Modal -->
-<div class="modal fade" id="exampleModal22" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
-      <div class="modal-footer">
-         <form method="post">
-              <input name="essai" type="hidden" value="update">
-              <input name="id_formation" type="hidden" value="2">
-              <input name="id_sous_formation" type="hidden" value="2">
-              <button type="submit" class="btn btn-success">Je confirme avoir terminé cette formation :)</button>
-          </form>
-      <button class="btn btn-warning">  <a role="button" href="{{formations[1].url_formation}}" target="_blank">Cliquez ici pour y accéder</a> </button>
-      </div>
-    </div>
-  </div>
-</div>
 </body>
 
 </html>
